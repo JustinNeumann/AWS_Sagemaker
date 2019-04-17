@@ -18,8 +18,8 @@ def _parse_args():
 	parser.add_argument('--model_dir', type=str)
 	parser.add_argument('--batch_size', type=str)
 	parser.add_argument('--epochs', type=str)
-
-    return parser.parse_known_args()
+	
+	return parser.parse_known_args()
 
 if __name__ == "__main__":
 
@@ -43,4 +43,4 @@ if __name__ == "__main__":
 	test_predictions = model.predict(X_test).flatten()
 	
 	# create a separate SavedModel for deployment to a SageMaker endpoint with TensorFlow Serving
-    tf.contrib.saved_model.save_keras_model(model, args.model_dir)
+	tf.contrib.saved_model.save_keras_model(model, args.model_dir)
